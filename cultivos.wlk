@@ -45,8 +45,8 @@ class Trigo {
 		return "wheat_" + evolucion + ".png"
 	}
 
-	method sembrar(){
-		return game.addVisual(self)
+	method sembrar(posicion){
+		self.position(posicion)
 	}
 
 }
@@ -58,8 +58,8 @@ class Tomaco {
 
 	}
 
-	method sembrar(){
-		return game.addVisual(self)
+	method sembrar(posicion){
+		self.position(posicion)
 	}
 
 }
