@@ -1,9 +1,14 @@
-import example.pepita
+import wollok.game.*
+import hector.*
+import cultivos.*
+import direcciones.*
 
-describe "group of tests for pepita" {
+describe "Grupo de tests para hector y la granja" {
+    test "hector intenta plantar una planta en un lugar ocupado"{
+      hector.position(game.at(1,1))
+      hector.sembrar(new Maiz())
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
+      assert.throwsExceptionWithMessage("esta parcela está ocupada", {hector.sembrar(new Maiz())})
+    }
 
 }
