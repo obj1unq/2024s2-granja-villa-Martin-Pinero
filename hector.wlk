@@ -15,16 +15,25 @@ object hector {
 	}
 
 	method validarSembrar(){
-		if (self.estaOcupadoAca()){
+		if (granja.hayCultivoAca(self.position())){
 			self.error("esta parcela está ocupada")
 		}
 	}
 
-	method estaOcupadoAca(){
-		return granja.cultivos().any({cultivo => cultivo.position() == self.position()})
-	}
 
 	method mover(direccion){
 		position = direccion.siguiente(self.position())
+	}
+
+	method regar(){
+		self.validarRegar()
+		granja.cultivoAca(self.position()).regar()
+
+	}
+
+	method validarRegar(){
+		if (not granja.hayCultivoAca(self.position())){
+			self.error("no tengo nada para regar")
+		}
 	}
 }

@@ -1,4 +1,6 @@
 import wollok.game.*
+import granja.*
+import direcciones.*
 
 class Maiz {
 	var property position = null
@@ -39,7 +41,7 @@ object cornAdult {
 class Trigo {
 
 	var property position = null
-	var evolucion = 0
+	var property evolucion = 0
 
 	method image(){
 		return "wheat_" + evolucion + ".png"
@@ -47,6 +49,10 @@ class Trigo {
 
 	method sembrar(posicion){
 		self.position(posicion)
+	}
+
+	method regar(){
+		evolucion = (evolucion + 1) % 4
 	}
 
 }
@@ -60,6 +66,18 @@ class Tomaco {
 
 	method sembrar(posicion){
 		self.position(posicion)
+	}
+
+	method regar(){
+		self.validarSubir()
+		position = game.at(position.x(), (game.height()-1).min(position.y() +1) )
+	}
+
+	method validarSubir(){
+		if (granja.cultivoAca(arriba.siguiente(self.position())).isEmpty()){
+
+		}
+
 	}
 
 }

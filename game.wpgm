@@ -19,7 +19,7 @@ program farmville {
 	keyboard.m().onPressDo({hector.sembrar(new Maiz())})
 	keyboard.t().onPressDo({hector.sembrar(new Trigo())})
 	keyboard.o().onPressDo({hector.sembrar(new Tomaco())})
-
+	//REGAR
 	keyboard.r().onPressDo({hector.regar()})
 
 	//Movimiento
