@@ -65,7 +65,7 @@ class Tomaco {
 	}
 
 	method sembrar(posicion){
-		self.position(posicion)
+		position = posicion
 	}
 
 	method regar(){
@@ -74,10 +74,13 @@ class Tomaco {
 	}
 
 	method validarSubir(){
-		if (granja.cultivoAca(arriba.siguiente(self.position())).isEmpty()){
-
+		if(self.puedeSubir()){
+			self.error(null)
 		}
 
+	}
+	method puedeSubir(){
+		return granja.hayCultivoAca(arriba.siguiente(self.position()))
 	}
 
 }
