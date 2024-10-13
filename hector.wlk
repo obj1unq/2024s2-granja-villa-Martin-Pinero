@@ -36,4 +36,16 @@ object hector {
 			self.error("no tengo nada para regar")
 		}
 	}
+
+	method cosechar(){
+		self.validarCosechar()
+		granja.cultivoAca(self.position()).cosechar()
+		
+	}
+
+	method validarCosechar(){
+		if (not granja.hayCultivoAca(self.position())){
+			self.error("no tengo nada para cosechar")
+		}
+	}
 }
