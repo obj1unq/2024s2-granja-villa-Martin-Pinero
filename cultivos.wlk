@@ -55,7 +55,7 @@ class Tomaco {
 	var property position = null
 
 	method image(){
-
+		return "tomaco.png"
 	}
 
 	method sembrar(posicion){

@@ -14,9 +14,15 @@ program farmville {
  	game.addVisual(hector)
  	
     //CONTROLES
+
+	//SEMBRAR
 	keyboard.m().onPressDo({hector.sembrar(new Maiz())})
 	keyboard.t().onPressDo({hector.sembrar(new Trigo())})
 	keyboard.o().onPressDo({hector.sembrar(new Tomaco())})
+
+	keyboard.r().onPressDo({hector.regar()})
+
+	//Movimiento
 	keyboard.up().onPressDo({hector.mover(arriba)})
 	keyboard.down().onPressDo({hector.mover(abajo)})
 	keyboard.left().onPressDo({hector.mover(izquierda)})
